@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Story test</title>
+</head>
+<body>
+    <div class="cabecalho">
+        <nav class="cabecalho-menu">
+            <h1 class="cabecalho-menu-item">AWESOME</h1>
+            <button class="cart-icon-button" onclick="toggleCart()">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.3L19 7H7.3"/>
+                </svg>
+            </button>
+        </nav>
+    </div>
+    <div class="container">
+        <!-- Conteúdo será adicionado dinamicamente -->
+    </div>
+
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <button class="close-button" onclick="toggleCart()">&times;</button>
+        <h2 class="cart-header">Carrinho de Compras</h2>
+        <div class="cart-items">
+            <!-- Itens do carrinho serão adicionados dinamicamente -->
+        </div>
+        <p id="cart-total">Total: $0.00</p>
+    </div>
+
+  
+    <div class="details-sidebar">
+        <button class="close-button" onclick="toggleDetails()">&times;</button>
+        <h2 id="product-name">Nome do Produto</h2>
+        <p id="product-details">Detalhes do Produto</p>
+    </div>
+
+    <script>
+        // Função para alternar a visibilidade da barra lateral do carrinho
+        function toggleCart() {
+            var cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('open');
+        }
+
+        // Função para alternar a visibilidade da barra lateral de detalhes do produto
+        function toggleDetails() {
+            var detailsSidebar = document.querySelector('.details-sidebar');
+            detailsSidebar.classList.toggle('open');
+        }
+
+        // Função para adicionar um item ao carrinho
+        function addToCart(product) {
+            // Implemente a lógica para adicionar o produto ao carrinho
+            // Este é apenas um exemplo de como você pode exibir os itens no carrinho
+            var cartItems = document.querySelector('.cart-items');
+            var cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <p class="cart-item-name">${product.name}</p>
+                <p class="cart-item-price">${product.price}</p>
+            `;
+            cartItems.appendChild(cartItem);
+
+            // Atualiza o total dos itens no carrinho
+            updateCartTotal();
+        }
+
+        // Função para atualizar o total dos itens no carrinho
+        function updateCartTotal() {
+            var cartItems = document.querySelectorAll('.cart-item-price');
+            var total = 0;
+            cartItems.forEach(item => {
+                var price = parseFloat(item.textContent.replace('$', ''));
+                total += price;
+            });
+            document.getElementById('cart-total').textContent = 'Total: $' + total.toFixed(2);
+        }
+
+
+        // Carregando os dados do JSON
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                // Mapeando os dados e adicionando eventos aos botões
+                data.forEach(product => {
+                    var button = document.createElement('button');
+                    button.className = 'details';
+                    button.textContent = 'Details';
+                    button.dataset.name = product.name;
+                    button.dataset.details = product.Details;
+                    button.addEventListener('click', function() {
+                        // Exibindo os detalhes do produto clicado na barra lateral
+                        document.getElementById('product-name').textContent = this.dataset.name;
+                        document.getElementById('product-details').textContent = this.dataset.details;
+                        toggleDetails(); // Mostra a barra lateral de detalhes do produto
+                    });
+
+                    var container = document.createElement('div');
+                    container.className = 'main_container';
+                    var productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+                    var img = document.createElement('img');
+                    img.src = product.image;
+                    img.alt = product.name;
+                    var descDiv = document.createElement('div');
+                    descDiv.className = 'product_desc';
+                    var name = document.createElement('h4');
+                    name.textContent = product.name;
+                    var priceBtn = document.createElement('button');
+                    priceBtn.className = 'buy-now';
+                    priceBtn.innerHTML = `<p>${product.price}</p>`;
+                    // Adicionando evento de clique para adicionar ao carrinho
+                    priceBtn.addEventListener('click', function() {
+                        addToCart(product);
+                    });
+
+                    descDiv.appendChild(name);
+                    descDiv.appendChild(priceBtn);
+                    descDiv.appendChild(button);
+                    productDiv.appendChild(img);
+                    productDiv.appendChild(descDiv);
+                    container.appendChild(productDiv);
+                    document.querySelector('.container').appendChild(container);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os dados:', error));
+    </script>
+</body>
+</html>

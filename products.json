@@ -1,0 +1,49 @@
+[
+    {
+        "id":1,
+        "name":"Fucking Awesome",
+        "price": "$13.23",
+        "image": "photo-1571945153237-4929e783af4a.avif",
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ipsum. Aliquam eu metus nec dui eleifend euismod eget nec justo. Suspendisse vitae diam tincidunt tortor venenatis suscipit. Nunc tempor eros sit amet odio pellentesque fermentum. Aenean at odio sit amet ligula posuere congue tincidunt eget dui. Proin sollicitudin feugiat ipsum, vel maximus mi vestibulum sit amet. In at sem lacinia, consectetur magna et, imperdiet nunc."
+    },
+
+    {
+        "id":2,
+        "name":"Fucking Awesome",
+        "price": "$13.23",
+        "image": "photo-1571945153237-4929e783af4a.avif",
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ipsum. Aliquam eu metus nec dui eleifend euismod eget nec justo. Suspendisse vitae diam tincidunt tortor venenatis suscipit. Nunc tempor eros sit amet odio pellentesque fermentum. Aenean at odio sit amet ligula posuere congue tincidunt eget dui. Proin sollicitudin feugiat ipsum, vel maximus mi vestibulum sit amet. In at sem lacinia, consectetur magna et, imperdiet nunc."
+    },
+    
+    {
+        "id":3,
+        "name":"Fucking Awesome",
+        "price": "$13.23",
+        "image": "photo-1571945153237-4929e783af4a.avif",
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ipsum. Aliquam eu metus nec dui eleifend euismod eget nec justo. Suspendisse vitae diam tincidunt tortor venenatis suscipit. Nunc tempor eros sit amet odio pellentesque fermentum. Aenean at odio sit amet ligula posuere congue tincidunt eget dui. Proin sollicitudin feugiat ipsum, vel maximus mi vestibulum sit amet. In at sem lacinia, consectetur magna et, imperdiet nunc."
+    },
+
+    {
+        "id":4,
+        "name":"Fucking Awesome",
+        "price": "$13.23",
+        "image": "photo-1571945153237-4929e783af4a.avif",
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ipsum. Aliquam eu metus nec dui eleifend euismod eget nec justo. Suspendisse vitae diam tincidunt tortor venenatis suscipit. Nunc tempor eros sit amet odio pellentesque fermentum. Aenean at odio sit amet ligula posuere congue tincidunt eget dui. Proin sollicitudin feugiat ipsum, vel maximus mi vestibulum sit amet. In at sem lacinia, consectetur magna et, imperdiet nunc."
+    },
+
+    {
+        "id":5,
+        "name":"Fucking Awesome",
+        "price": "$13.23",
+        "image": "photo-1571945153237-4929e783af4a.avif",
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ipsum. Aliquam eu metus nec dui eleifend euismod eget nec justo. Suspendisse vitae diam tincidunt tortor venenatis suscipit. Nunc tempor eros sit amet odio pellentesque fermentum. Aenean at odio sit amet ligula posuere congue tincidunt eget dui. Proin sollicitudin feugiat ipsum, vel maximus mi vestibulum sit amet. In at sem lacinia, consectetur magna et, imperdiet nunc."
+    },
+
+    {
+        "id":6,
+        "name":"Fucking Awesome",
+        "price": "$13.23",
+        "image": "photo-1571945153237-4929e783af4a.avif",
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ipsum. Aliquam eu metus nec dui eleifend euismod eget nec justo. Suspendisse vitae diam tincidunt tortor venenatis suscipit. Nunc tempor eros sit amet odio pellentesque fermentum. Aenean at odio sit amet ligula posuere congue tincidunt eget dui. Proin sollicitudin feugiat ipsum, vel maximus mi vestibulum sit amet. In at sem lacinia, consectetur magna et, imperdiet nunc."
+    }
+]
